@@ -1,0 +1,99 @@
+#include <iostream>
+using namespace std;
+
+void tampilan(){
+	string nama;
+	int sepatu[10],jm,z,uang;
+	int s1,s2,s3;
+	long int total;
+	total=0;
+	const int adidas=150000;
+	const int vans=250000;
+	const int nike=350000;
+	
+	cout<<"________________________________________________"<<endl;
+	cout<<"\t\t   TOKO SEPATU\t\t\t|"<<endl;
+	cout<<"________________________________________________|"<<endl;
+	cout<<"Sepatu Yang Tersedia\t|"<<"\tHarga Sepatu\t|"<<endl;
+	cout<<"1.Adidas"<<"\t\t| Rp.150000\t\t|"<<endl;
+	cout<<"2.Vans"<<"\t\t\t| Rp.250000\t\t|"<<endl;
+	cout<<"3.Nike"<<"\t\t\t| Rp.350000\t\t|"<<endl;
+	cout<<"________________________________________________|"<<endl;
+	cout<<"Nama Pembeli : ";cin>>nama;
+	cout<<"Masukkan Jumlah Pesanan : ";
+	cin>>jm;
+	
+	for(z=1;z<=jm;z++)
+	{
+		cout<<"\nPesanan Ke :"<<z;
+		cout<<"\nMasukkan Urutan Sepatu (1/2/3):";
+		cin>>sepatu[z];
+	}
+	cout<<"\nPesan Sepatu :";
+	cout<<"\n";
+	z=1;
+	while(z<=jm){
+		switch(sepatu[z])
+		{
+		
+		case 1:
+			cout<<z<<","<<"Adidas (Rp."<<adidas<<")"<<endl;
+			break;
+		case 2:
+			cout<<z<<","<<"Vans(Rp."<<vans<<")"<<endl;
+			break;
+		case 3:
+			cout<<z<<","<<"Nike (Rp."<<nike<<")"<<endl;
+			break;
+			default :
+				cout<<" \n******* Salah Input *******"<<endl;		
+	}
+	z++;
+}
+z=1;
+while (z<=jm)
+{
+	switch(sepatu[z])
+{
+		case 1:
+		    s1=150000;
+			total=(total+s1);
+			break;
+		case 2:
+		    s2=250000;
+			total=(total+s2);
+			break;
+		case 3:
+			s3=350000;
+			total=(total+s3);
+			break;
+}
+z++;	
+}
+
+bayar:
+cout<<"\nTotal Pembayaran :"<<"Rp."<<total;
+cout<<"\nMasukkan Uang Anda : Rp.";
+cin>>uang;
+
+if (uang<total)
+{
+	cout<<"\nUang anda tidak cukup";
+	goto bayar;
+}
+else if (uang>=total)
+{
+	cout<<"\nKembalian Uang Anda : Rp."<<uang-total;
+}
+cout<<endl;
+cout<<"\nTERIMA KASIH TELAH BELANJA DI TOKO KAMI"<<endl;
+
+}
+int main (){
+	cout<<endl;
+	cout<<"Kelompok 1"<<endl;
+	cout<<"S.A Syailendra Wangsa Suhayo"<<endl;
+	cout<<"Siti Nailis"<<endl;
+	tampilan();
+	return 0;
+}
